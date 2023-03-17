@@ -1,13 +1,12 @@
 import { NavLink, Route, Routes } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
-import RegisterPage from "./pages/RegisterPage";
+import SignUpPage from "./pages/SignUpPage";
+import AdminPage from "./pages/AdminPage";
 import UsersPage from "./pages/UsersPage";
-import User from "./pages/User";
 import TweetLayout from "./layouts/TweetLayout";
 import TweetsPage from "./pages/TweetsPage";
 import Tweet from "./pages/Tweet";
-import NewTweet from "./pages/NewTweet";
 import UserTweets from "./pages/UserTweets";
 import UserReplies from "./pages/UserReplies";
 import UserLikes from "./pages/UserLikes";
@@ -27,7 +26,10 @@ function App() {
             <NavLink to="/login">Login</NavLink>
           </li>
           <li>
-            <NavLink to="/register">Register</NavLink>
+            <NavLink to="/signup">Sign up</NavLink>
+          </li>
+          <li>
+            <NavLink to="/admin">Admin login</NavLink>
           </li>
           <li>
             <NavLink to="/tweets">Tweets</NavLink>
@@ -37,22 +39,21 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/register" element={<RegisterPage />} />
-        <p>Test</p>
-        <p>feature/c update</p>
+        <Route path="/signup" element={<SignUpPage />} />
+        <Route path="/admin" element={<AdminPage />} />
         <Route element={<TweetLayout />}>
           <Route path="/tweets">
             <Route index element={<TweetsPage />} />
             <Route path=":id" element={<Tweet />} />
-            <Route path="new" element={<NewTweet />} />
           </Route>
-          <Route path="/user" element={<UsersPage />}>
-            <Route path="tweets" element={<UserTweets />} />
-            <Route path="replies" element={<UserReplies />} />
-            <Route path="likes" element={<UserLikes />} />
+          <Route element={<UsersPage />}>
+            <Route path="/users/:id">
+              <Route path="tweets" element={<UserTweets />} />
+              <Route path="replies" element={<UserReplies />} />
+              <Route path="likes" element={<UserLikes />} />
+            </Route>
           </Route>
           <Route path="/settings" element={<Settings />} />
-          <Route path="/user/:id" element={<User />} />
         </Route>
         <Route path="*" element={<Notfound />} />
       </Routes>

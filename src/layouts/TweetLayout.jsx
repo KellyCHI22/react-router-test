@@ -18,6 +18,9 @@ const StyledContainer = styled.div`
 `;
 
 export default function TweetLayout() {
+  const user = {
+    id: 5,
+  };
   return (
     <StyledContainer>
       <nav className="sidenav">
@@ -25,7 +28,7 @@ export default function TweetLayout() {
           <NavLink to="/tweets">View all tweets</NavLink>
         </li>
         <li>
-          <NavLink to="/user">Go to user page</NavLink>
+          <NavLink to={`/users/${user.id}/tweets`}>Go to user page</NavLink>
         </li>
         <li>
           <NavLink to="/settings">Settings</NavLink>
