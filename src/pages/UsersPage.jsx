@@ -15,6 +15,12 @@ export default function UsersPage() {
         <li>
           <NavLink to={`/users/${id}/likes`}>Likes</NavLink>
         </li>
+        <li>
+          <NavLink to={`/users/${id}/followers`}>Followers</NavLink>
+        </li>
+        <li>
+          <NavLink to={`/users/${id}/followings`}>Followings</NavLink>
+        </li>
       </nav>
       <Outlet context={id} />
     </>

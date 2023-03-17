@@ -3,15 +3,20 @@ import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
 import SignUpPage from './pages/SignUpPage';
 import AdminPage from './pages/AdminPage';
-import UsersPage from './pages/UsersPage';
+import AdminLayout from './layouts/AdminLayout';
+import AdminTweets from './pages/AdminTweets';
+import AdminUsers from './pages/AdminUsers';
 import TweetLayout from './layouts/TweetLayout';
 import TweetsPage from './pages/TweetsPage';
 import Tweet from './pages/Tweet';
+import UsersPage from './pages/UsersPage';
 import UserTweets from './pages/UserTweets';
 import UserReplies from './pages/UserReplies';
 import UserLikes from './pages/UserLikes';
+import UserFollowers from './pages/UserFollowers';
+import UserFollowings from './pages/UserFollowings';
 import Settings from './pages/Settings';
-import Notfound from './pages/Notfound';
+import Notfound from './pages/NotfoundPage';
 import './App.css';
 
 const basename = import.meta.env.VITE_PUBLIC_URL;
@@ -40,7 +45,13 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="login" element={<LoginPage />} />
         <Route path="signup" element={<SignUpPage />} />
-        <Route path="admin" element={<AdminPage />} />
+        <Route path="admin">
+          <Route index element={<AdminPage />} />
+          <Route element={<AdminLayout />}>
+            <Route path="tweets" element={<AdminTweets />} />
+            <Route path="users" element={<AdminUsers />} />
+          </Route>
+        </Route>
         <Route element={<TweetLayout />}>
           <Route path="tweets">
             <Route index element={<TweetsPage />} />
@@ -51,6 +62,8 @@ function App() {
               <Route path="tweets" element={<UserTweets />} />
               <Route path="replies" element={<UserReplies />} />
               <Route path="likes" element={<UserLikes />} />
+              <Route path="followers" element={<UserFollowers />} />
+              <Route path="followings" element={<UserFollowings />} />
             </Route>
           </Route>
           <Route path="settings" element={<Settings />} />
