@@ -39,6 +39,7 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <p>Test</p>
+        <p>feature/c update</p>
         <Route element={<TweetLayout />}>
           <Route path="/tweets">
             <Route index element={<TweetsPage />} />
