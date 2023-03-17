@@ -6,7 +6,7 @@ export default function Notfound() {
 
   useEffect(() => {
     setTimeout(() => {
-      navigate('/login');
+      navigate('/');
     }, 2000);
   }, [navigate]);
 
