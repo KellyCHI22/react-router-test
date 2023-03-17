@@ -1,6 +1,6 @@
-import { useState } from "react";
-import { NavLink } from "react-router-dom";
-import styled from "styled-components";
+import { useState } from 'react';
+import { NavLink } from 'react-router-dom';
+import styled from 'styled-components';
 
 const StyledDiv = styled.div`
   position: absolute;
@@ -20,16 +20,18 @@ const StyledDiv = styled.div`
   }
 `;
 
-const NewTweetModal = ({ onButtonClick }) => {
+function NewTweetModal({ onButtonClick }) {
   return (
     <StyledDiv>
       <div>
         <p>Add a new tweet</p>
-        <button onClick={onButtonClick}>Confirm</button>
+        <button type="button" onClick={onButtonClick}>
+          Confirm
+        </button>
       </div>
     </StyledDiv>
   );
-};
+}
 
 export default function TweetsPage() {
   const [showModal, setShowModal] = useState(false);
@@ -55,7 +57,9 @@ export default function TweetsPage() {
         <li>
           <NavLink to="/users/2/tweets">View user 2 profile</NavLink>
         </li>
-        <button onClick={handleShowModal}>Add a new tweet</button>
+        <button type="button" onClick={handleShowModal}>
+          Add a new tweet
+        </button>
         {showModal && <NewTweetModal onButtonClick={handleShowModal} />}
       </nav>
     </>

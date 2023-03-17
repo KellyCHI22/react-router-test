@@ -1,4 +1,4 @@
-import { useOutletContext, useParams } from "react-router-dom";
+import { useOutletContext, useParams } from 'react-router-dom';
 
 export default function Tweet() {
   // use the params for dynamic routes

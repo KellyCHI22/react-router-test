@@ -1,18 +1,18 @@
-import { NavLink, Route, Routes } from "react-router-dom";
-import HomePage from "./pages/HomePage";
-import LoginPage from "./pages/LoginPage";
-import SignUpPage from "./pages/SignUpPage";
-import AdminPage from "./pages/AdminPage";
-import UsersPage from "./pages/UsersPage";
-import TweetLayout from "./layouts/TweetLayout";
-import TweetsPage from "./pages/TweetsPage";
-import Tweet from "./pages/Tweet";
-import UserTweets from "./pages/UserTweets";
-import UserReplies from "./pages/UserReplies";
-import UserLikes from "./pages/UserLikes";
-import Settings from "./pages/Settings";
-import Notfound from "./pages/Notfound";
-import "./App.css";
+import { NavLink, Route, Routes } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import LoginPage from './pages/LoginPage';
+import SignUpPage from './pages/SignUpPage';
+import AdminPage from './pages/AdminPage';
+import UsersPage from './pages/UsersPage';
+import TweetLayout from './layouts/TweetLayout';
+import TweetsPage from './pages/TweetsPage';
+import Tweet from './pages/Tweet';
+import UserTweets from './pages/UserTweets';
+import UserReplies from './pages/UserReplies';
+import UserLikes from './pages/UserLikes';
+import Settings from './pages/Settings';
+import Notfound from './pages/Notfound';
+import './App.css';
 
 function App() {
   return (

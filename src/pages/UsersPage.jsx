@@ -1,10 +1,10 @@
-import { NavLink, Outlet, useParams } from "react-router-dom";
+import { NavLink, Outlet, useParams } from 'react-router-dom';
 
 export default function UsersPage() {
   const { id } = useParams();
   return (
     <>
-      <h1>This is user {id}'s page</h1>
+      <h1>This is the home page of user {id}</h1>
       <nav>
         <li>
           <NavLink to={`/users/${id}/tweets`}>All Tweets</NavLink>

@@ -1,5 +1,5 @@
-import { NavLink, Outlet } from "react-router-dom";
-import styled from "styled-components";
+import { NavLink, Outlet } from 'react-router-dom';
+import styled from 'styled-components';
 
 const StyledContainer = styled.div`
   outline: 2px solid tomato;
@@ -36,7 +36,7 @@ export default function TweetLayout() {
       </nav>
       <div className="middle">
         {/* anything passed in context are shared between nested routes */}
-        <Outlet context={{ text: "hello world" }} />
+        <Outlet context={{ text: 'hello world' }} />
       </div>
       <div className="popular">
         <h2>Popular</h2>
