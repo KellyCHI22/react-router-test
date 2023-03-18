@@ -1,3 +1,11 @@
+import { Container } from '../globalStyles';
+
 export default function LoginPage() {
-  return <h1>LoginPage</h1>;
+  return (
+    <Container>
+      <h1>LoginPage</h1>
+    </Container>
+  );
 }
+
+// * 確定 ok weii

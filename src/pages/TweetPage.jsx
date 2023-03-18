@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
+import TweetInput from '../components/TweetInput';
+import TweetList from '../components/TweetList';
 
 const StyledDiv = styled.div`
   position: absolute;
@@ -44,6 +46,11 @@ export default function TweetsPage() {
   return (
     <>
       <h1>TweetsPage</h1>
+      <TweetInput />
+      <button type="button" onClick={handleShowModal}>
+        Add a new tweet
+      </button>
+      <TweetList />
       <nav>
         <li>
           <NavLink to="/tweets/1">Tweet 1</NavLink>
@@ -57,11 +64,11 @@ export default function TweetsPage() {
         <li>
           <NavLink to="/users/2/tweets">View user 2 profile</NavLink>
         </li>
-        <button type="button" onClick={handleShowModal}>
-          Add a new tweet
-        </button>
+
         {showModal && <NewTweetModal onButtonClick={handleShowModal} />}
       </nav>
     </>
   );
 }
+
+// * K

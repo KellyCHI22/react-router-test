@@ -1,10 +1,12 @@
 import { NavLink, Outlet, useParams } from 'react-router-dom';
+import Profile from '../components/Profile';
 
 export default function UsersPage() {
   const { id } = useParams();
   return (
     <>
       <h1>This is the home page of user {id}</h1>
+      <Profile />
       <nav>
         <li>
           <NavLink to={`/users/${id}/tweets`}>All Tweets</NavLink>
@@ -26,3 +28,5 @@ export default function UsersPage() {
     </>
   );
 }
+
+// * K
