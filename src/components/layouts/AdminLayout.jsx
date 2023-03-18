@@ -22,7 +22,7 @@ export default function AdminLayout() {
     if (!user.isAdmin) {
       return navigate('/login');
     }
-    return null;
+    return undefined;
   }, [navigate]);
 
   return (

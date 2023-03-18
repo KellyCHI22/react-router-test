@@ -66,11 +66,17 @@ function App() {
           </Route>
           <Route element={<UserPage />}>
             <Route path="users/:id">
-              <Route path="tweets" element={<TweetList />} />
-              <Route path="replies" element={<TweetList />} />
-              <Route path="likes" element={<TweetList />} />
-              <Route path="followers" element={<FollowList />} />
-              <Route path="followings" element={<FollowList />} />
+              <Route path="tweets" element={<TweetList type="tweets" />} />
+              <Route path="replies" element={<TweetList type="replies" />} />
+              <Route path="likes" element={<TweetList type="likes" />} />
+              <Route
+                path="followers"
+                element={<FollowList type="followers" />}
+              />
+              <Route
+                path="followings"
+                element={<FollowList type="followings" />}
+              />
             </Route>
           </Route>
           <Route path="settings" element={<SettingsPage />} />

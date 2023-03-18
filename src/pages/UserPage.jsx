@@ -1,12 +1,14 @@
-import { NavLink, Outlet, useParams } from 'react-router-dom';
+import { NavLink, Outlet, useParams, useLocation } from 'react-router-dom';
 import Profile from '../components/Profile';
 
 export default function UsersPage() {
   const { id } = useParams();
+  const location = useLocation();
+
   return (
     <>
       <h1>This is the home page of user {id}</h1>
-      <Profile />
+      {!location.pathname.includes('follow') && <Profile />}
       <nav>
         <li>
           <NavLink to={`/users/${id}/tweets`}>All Tweets</NavLink>

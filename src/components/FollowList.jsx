@@ -1,6 +1,10 @@
 import React from 'react';
 
-export default function FollowList() {
-  return <div>FollowList</div>;
+export default function FollowList({ type }) {
+  return (
+    <h2>
+      FollowList <i>{type}</i>
+    </h2>
+  );
 }
 // * K
